@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7DD7912E-F2CB-4386-B167-F0B1AD134044}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExportToVR</RootNamespace>
+    <AssemblyName>ExportToVR2020</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>D:\Revit2019\Revit 2019\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>D:\Revit2019\Revit 2019\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllViews.cs" />
+    <Compile Include="CheckExportContext.cs" />
+    <Compile Include="cl_ExportAnimations.cs" />
+    <Compile Include="cl_ExportData.cs" />
+    <Compile Include="cl_ExportPAT.cs" />
+    <Compile Include="cl_ExportProperties.cs" />
+    <Compile Include="cl_ExportToVR.cs" />
+    <Compile Include="cl_ExportToVR_Button.cs" />
+    <Compile Include="cl_ExportVU.cs" />
+    <Compile Include="cl_ExportVUxyz.cs" />
+    <Compile Include="ExpAnimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpAnimForm.Designer.cs">
+      <DependentUpon>ExpAnimForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpDataForm.Designer.cs">
+      <DependentUpon>ExpDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportToVRContext.cs" />
+    <Compile Include="ExportToVRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportToVRForm.Designer.cs">
+      <DependentUpon>ExportToVRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportToVUForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportToVUForm.Designer.cs">
+      <DependentUpon>ExportToVUForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportToVUxyzForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportToVUxyzForm.Designer.cs">
+      <DependentUpon>ExportToVUxyzForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportViewsToVRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportViewsToVRForm.Designer.cs">
+      <DependentUpon>ExportViewsToVRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindMatPatternsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindMatPatternsForm.Designer.cs">
+      <DependentUpon>FindMatPatternsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupType.cs" />
+    <Compile Include="ListID.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpAnimForm.resources" />
+    <EmbeddedResource Include="ExpDataForm.resources" />
+    <EmbeddedResource Include="ExportToVRForm.resources" />
+    <EmbeddedResource Include="ExportToVUForm.resources" />
+    <EmbeddedResource Include="ExportToVUxyzForm.resources" />
+    <EmbeddedResource Include="ExportViewsToVRForm.resx">
+      <DependentUpon>ExportViewsToVRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindMatPatternsForm.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
